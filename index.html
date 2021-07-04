@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" translate="no" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="all.min.css">
+</head>
+<body>
+    <header>
+        <button onclick="SearchOpen()" aria-label="زر البحث"><i class="fas fa-search fa-lg"></i></button>
+        <button class="name"></button>
+        <button id="bars" onclick="window.genre = 'جميع الأنميات';ToAll();FillAll();" aria-label="زر جميع الانميات" class=""><i class="fas fa-bars fa-lg"></i></button>
+        <button id="back" onclick="BackButton();" aria-label="زر العودة" class="none"><i class="fas fa-arrow-left fa-lg"></i></button>
+    </header>
+
+    <!-- Search pop up-->
+    <form autocomplete="off" onsubmit="return false">
+        <div class="search-container none" id="search">
+            <input id="myInput" type="search" placeholder="  محرك البحث" class="search" style="outline-width: 0;" >
+            <button onclick="search(document.getElementById('myInput').value)" aria-label="أبحث" class="nobackground"><i class="fas fa-search fa-lg" style="cursor: pointer; color: #ffffff;padding: 10px;"></i></button>
+        </div>
+        </form>
+
+
+        <main id="m1" class="">
+        <h1 class="mgt">التصنيفات</h1>
+        <div class="grid-container">
+            <div onclick="window.genre = 'أكشن';ToAll();FillGenre(window.genre);" class="grid-item"><img src="img/swords.png" alt=""><p>أكشن</p></div>
+            <div onclick="window.genre = 'دراما';ToAll();FillGenre(window.genre);" class="grid-item"><img src="img/theater.png" alt=""><p>دراما</p></div>
+            <div onclick="window.genre = 'رعب';ToAll();FillGenre(window.genre);" class="grid-item"><img src="img/skull.png" alt=""><p>رعب</p></div>
+            <div onclick="window.genre = 'شونين';ToAll();FillGenre(window.genre);" class="grid-item"><img src="img/super.png" alt=""><p>شونين</p></div>
+            <div onclick="window.genre = 'كوميديا';ToAll();FillGenre(window.genre);" class="grid-item"><img src="img/happy.png" alt=""><p>كوميديا</p></div>
+            <div onclick="window.genre = 'غموض';ToAll();FillGenre(window.genre);" class="grid-item"><img src="img/carnival-mask.png" alt=""><p>غموض</p></div>
+            <div onclick="window.genre = 'رومانسي';ToAll();FillGenre(window.genre);" class="grid-item"><img src="img/heart.png" alt=""><p>رومانسي</p></div>
+            <div onclick="window.genre = 'رياضي';ToAll();FillGenre(window.genre);" class="grid-item"><img src="img/sports.png" alt=""><p>رياضي</p></div>
+            <div onclick="window.genre = 'مدرسي';ToAll();FillGenre(window.genre);" class="grid-item"><img src="img/university.png" alt=""><p>مدرسي</p></div>
+          </div>
+          <h1 class="mgt">الأنميات الأكثر شعبية<i class="fas fa-star fa-md"></i></h1>
+
+<div class="g-container">
+<div onclick="FillAndGo(this.id)" id="ون بيس" class="g-item"><img src="img/onepiece1.jpg"><p class="center">ون بيس</p></div>
+<div onclick="FillAndGo(this.id)" id="ناروتو" class="g-item"><img src="img/naruto1.jpg"><p class="center">ناروتو</p></div>
+<div onclick="FillAndGo(this.id)" id="هجوم العمالقة" class="g-item"><img src="img/attack1.jpg"><p class="center">هجوم العمالقة</p></div>
+<div onclick="FillAndGo(this.id)" id="هنتر اكس هنتر" class="g-item"><img src="img/hunter1.jpg"><p class="center">هنتر اكس هنتر</p></div>
+</div>
+
+</main>
+<main id="m2" class="none">
+    <h1 id="title" class="center" style="margin-bottom: 20px;"></h1>
+    <div id="titles" class="g-container">
+
+
+
+
+    </div>
+</main>
+<main id="m3" class="none">
+
+</main>
+
+</body>
+<script src="main.js"></script>
+<script>
+      function SearchOpen(){document.getElementById('search').classList.toggle('none')}
+
+
+
+      function main(){
+        document.getElementById('m1').classList.remove('none');
+        document.getElementById('m2').classList.add('none');
+        document.getElementById('m3').classList.add('none');
+    }
+    function main2(){
+        document.getElementById('m1').classList.add('none');
+        document.getElementById('m2').classList.remove('none');
+        document.getElementById('m3').classList.add('none');
+    }
+    function main3(){
+        document.getElementById('m1').classList.add('none');
+        document.getElementById('m2').classList.add('none');
+        document.getElementById('m3').classList.remove('none');
+    }
+// back button by where i am now
+function BackButton() { 
+var button = document.getElementById('m2')
+    if (button.classList.contains('none')) {
+        document.getElementById('back').classList.remove('none');
+        document.getElementById('bars').classList.add('none');
+        main2();
+} else {
+    main();
+    document.getElementById('back').classList.add('none');
+    document.getElementById('bars').classList.remove('none');
+}  
+}
+// choosing genre
+function ToAll() {
+    document.getElementById('title').innerHTML = window.genre;
+    document.getElementById('back').classList.remove('none');
+    document.getElementById('bars').classList.add('none');
+    main2();
+}
+
+
+
+</script>
+
+</html>
