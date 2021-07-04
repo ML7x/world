@@ -3,14 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>بربسه</title>
+    <meta name="description" content="أنميات من دون أعلانات">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="all.min.css">
 </head>
+<style>
+    
+
+ .fas {
+     -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+     display: inline-block;
+     font-style: normal;
+     font-variant: normal;
+     text-rendering: auto;
+     line-height: 1;
+ }
+ .fa-lg {
+     font-size: 1.33333em;
+     line-height: 0.75em;
+     vertical-align: -0.0667em;
+ }
+
+ .fa-bars:before {
+    content: "\f0c9";
+}
+ .fa-search:before {
+    content: "\f002";
+}
+ .fa-star:before {
+    content: "\f005";
+}
+ .fa-arrow-left:before {
+    content: "\f060";
+}
+
+.fas {
+     font-family: "Font Awesome 5 Free";
+     font-weight: 900;
+ }
+
+ 
+ @font-face {
+     font-family: "Font Awesome 5 Free";
+     font-style: normal;
+     font-weight: 900;
+     font-display: block;
+     src: url(webfonts/fa-solid-900.eot);
+     src: url(webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(webfonts/fa-solid-900.woff2) format("woff2"), url(webfonts/fa-solid-900.woff) format("woff"), url(webfonts/fa-solid-900.ttf) format("truetype"),
+         url(webfonts/fa-solid-900.svg#fontawesome) format("svg");
+ }
+
+
+</style>
 <body>
     <header>
         <button onclick="SearchOpen()" aria-label="زر البحث"><i class="fas fa-search fa-lg"></i></button>
-        <button class="name"></button>
+        <button aria-label="." class="name"></button>
         <button id="bars" onclick="window.genre = 'جميع الأنميات';ToAll();FillAll();" aria-label="زر جميع الانميات" class=""><i class="fas fa-bars fa-lg"></i></button>
         <button id="back" onclick="BackButton();" aria-label="زر العودة" class="none"><i class="fas fa-arrow-left fa-lg"></i></button>
     </header>
@@ -40,10 +89,10 @@
           <h1 class="mgt">الأنميات الأكثر شعبية<i class="fas fa-star fa-md"></i></h1>
 
 <div class="g-container">
-<div onclick="FillAndGo(this.id)" id="ون بيس" class="g-item"><img src="img/onepiece1.jpg"><p class="center">ون بيس</p></div>
-<div onclick="FillAndGo(this.id)" id="ناروتو" class="g-item"><img src="img/naruto1.jpg"><p class="center">ناروتو</p></div>
-<div onclick="FillAndGo(this.id)" id="هجوم العمالقة" class="g-item"><img src="img/attack1.jpg"><p class="center">هجوم العمالقة</p></div>
-<div onclick="FillAndGo(this.id)" id="هنتر اكس هنتر" class="g-item"><img src="img/hunter1.jpg"><p class="center">هنتر اكس هنتر</p></div>
+<div onclick="FillAndGo(this.id)" id="ون بيس" class="g-item"><img src="img/onepiece1.jpg"alt="ون بيس"><p class="center">ون بيس</p></div>
+<div onclick="FillAndGo(this.id)" id="ناروتو" class="g-item"><img src="img/naruto1.jpg"alt="ناروتو"><p class="center">ناروتو</p></div>
+<div onclick="FillAndGo(this.id)" id="هجوم العمالقة" class="g-item"><img src="img/attack1.jpg"alt="هجوم العمالقة"><p class="center">هجوم العمالقة</p></div>
+<div onclick="FillAndGo(this.id)" id="هنتر اكس هنتر" class="g-item"><img src="img/hunter1.jpg"alt="هنتر اكس هنتر"><p class="center">هنتر اكس هنتر</p></div>
 </div>
 
 </main>
