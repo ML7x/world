@@ -181,14 +181,14 @@ var episode = [
 function FillAll() {
     document.getElementById("titles").innerHTML = '';
     titles.forEach((title)=>{
-        document.getElementById("titles").innerHTML += '<div onclick="FillAndDontGo(this.id)" id="'+title.name+'" class="g-item animation"><img src="'+title.img+'"><p class="center">'+title.name+'</p></div>';
+        document.getElementById("titles").innerHTML += '<div onclick="FillAndDontGo(this.id)" id="'+title.name+'" class="g-item pointer animation"><img src="'+title.img+'"><p class="center">'+title.name+'</p></div>';
     })}
 
 function FillGenre(params) {
     document.getElementById("titles").innerHTML = '';
     titles.forEach((title)=>{
     if (title.genre.startsWith(params)||title.genre2.startsWith(params)||title.genre3.startsWith(params)||title.genre4.startsWith(params)||title.genre5.startsWith(params)||title.genre6.startsWith(params)||title.genre7.startsWith(params)||title.genre8.startsWith(params)||title.genre9.startsWith(params)) {
-        document.getElementById("titles").innerHTML += '<div onclick="FillAndDontGo(this.id)" id="'+title.name+'" class="g-item animation"><img src="'+title.img+'"><p class="center">'+title.name+'</p></div>';
+        document.getElementById("titles").innerHTML += '<div onclick="FillAndDontGo(this.id)" id="'+title.name+'" class="g-item pointer animation"><img src="'+title.img+'"><p class="center">'+title.name+'</p></div>';
 }})}
 
 
@@ -200,7 +200,7 @@ function FillAndGo(params) {
     BackButton();
     episode.forEach((ep)=>{
         if (ep.name.startsWith(params)){
-        document.getElementById("titles").innerHTML += '<div onclick="TheVideo(this.id)" id="'+ep.url+'" class="g-item animation"><img src="'+ep.img+'"><p class="center">'+ep.alt+'</p></div>';
+        document.getElementById("titles").innerHTML += '<div onclick="TheVideo(this.id)" id="'+ep.url+'" class="g-item pointer animation"><img src="'+ep.img+'"><p class="center">'+ep.alt+'</p></div>';
         }
  
     })
@@ -213,7 +213,7 @@ function FillAndDontGo(params) {
 
     episode.forEach((ep)=>{
         if (ep.name.startsWith(params)){
-        document.getElementById("titles").innerHTML += '<div onclick="TheVideo(this.id)" id="'+ep.url+'"  class="g-item animation"><img src="'+ep.img+'"><p class="center">'+ep.alt+'</p></div>';
+        document.getElementById("titles").innerHTML += '<div onclick="TheVideo(this.id)" id="'+ep.url+'"  class="g-item pointer animation"><img src="'+ep.img+'"><p class="center">'+ep.alt+'</p></div>';
         }
  
     })
@@ -236,7 +236,7 @@ function search(params) {
     main2();
     titles.forEach((title)=>{
         if (title.name.startsWith(params)){
-            document.getElementById("titles").innerHTML += '<div onclick="FillAndDontGo(this.id)" id="'+title.name+'" class="g-item animation"><img src="'+title.img+'"><p class="center">'+title.name+'</p></div>';
+            document.getElementById("titles").innerHTML += '<div onclick="FillAndDontGo(this.id)" id="'+title.name+'" class="g-item pointer animation"><img src="'+title.img+'"><p class="center">'+title.name+'</p></div>';
         }
  
     })
